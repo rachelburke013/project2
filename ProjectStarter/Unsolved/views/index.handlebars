@@ -1,0 +1,46 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>GoldenGurl Trivia Game</h2>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="question-text">Question</label>
+            <input type="text" id="question-text" class="form-control" aria-describedby="question-text" placeholder="Question">
+          </div>
+          <div class="form-group">
+            <label for="answer1">Player 1 Answer</label>
+            <textarea class="form-control" id="answer1" aria-describedby="answer1" placeholder="Enter Answer"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="answer2">Player 2 Answer</label>
+            <textarea class="form-control" id="answer2" aria-describedby="answer2" placeholder="Enter Answer"></textarea>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+        <h3>Users:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.firstName}}</a>
+            <div>{{this.score}}</div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+        <div>
+          <h3>Leaderboard</h3>
+          <ol>
+            <li>Lisa 10</li>
+            <li>Rachel 8</li>
+            <li>Blake 6</li>
+            <li>Josh 4</li>
+          </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
